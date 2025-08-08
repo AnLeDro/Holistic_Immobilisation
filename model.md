@@ -3,7 +3,7 @@ repo: "https://github.com/"
 prefix: "Immobilisior"
 ---
 
-# Immobilisationx
+# Immobilisation
 Description: Immobilization is a crucial technique in biotechnology where enzymes or cells are physically or chemically attached to a solid support material. This process enhances enzyme stability, enables reuse, and facilitates continuous bioprocessing operations.
 
 ## Root Objects
@@ -12,11 +12,16 @@ Description: Immobilization is a crucial technique in biotechnology where enzyme
 Description: Specification for enzyme immobilization process, including details about the enzyme and immobilization parameters.
 
 - enzyme
-  - Type:Enzyme
+  - Type: Enzyme
   - Description: Details of the enzyme to be immobilized, including source and characteristics
 - immobilisation
   - Type: Immobilisation
-
+- storage_conditions
+  - Type: StorageConditions
+- catalytic_performance
+  - Type: CatalyticPerformance
+- mKPIs_efficiency
+  - Type: mKPIsEfficiency
 
 ## General information
 
@@ -137,19 +142,24 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 
 - immobilisation_chemistry
   - Type: string
+  - Description: This aspect denotes the specific chemical methods or techniques used to attach the enzymes onto the chosen base material. Different immobilisation chemistries involve various covalent or non-covalent bonding strategies, including adsorption, covalent bonding, specific binding via (affinity)tag, entrapment or crosslinking.
 - carrier_binding
   - Type: CarrierBinding
+  - Description: Carrier-binding is referred to all non-covalent and covalent immobilisation techniques, requiering a support material, base, cell or carrier.  
 - entrapment
   - Type: Entrapment
+  - Description: Entrapment immobilisation techniques include the encapsulation and entrapment od the enzyme in a matrix.  
 - carrier_free
   - Type: CarrierFree
+  - Description: Carrier-free immobilisation refers to the crosslinking of enzymes.
 - immo_kpis
 	- Type: ImmoKPIs
 
 ### CarrierBinding
 - material
   - Type: string
-- preparation
+  - Description: If a support material, base, or carrier was utilized, it is necessary to specify the material's name (e.g., gel, membrane, particle) along with the supplier and further product details. 
+- method
   - Type: string
 - surface_modification
   - Type: string
@@ -157,10 +167,13 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 ### Entrapment
 - material
   - Type: string
+- method
+  - Type: string
 
 ### CarrierFree
-- technique
+- method
   - Type: string
+
 ### ImmoKPIs
 - immobilisation_yield
 	- Type: integer 
@@ -178,8 +191,84 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 	- Type: integer 
 	- Description: The enzyme loading describes the enzyme units immobilised per mass of immobilisation carrier.
 
+### StorageConditions
+- temperature
+   - Type: integer
+- additices
+   - Type: string
+- storage_performance_t12
+   - Type: integer
+- spec_activity
+   - Type: integer
+- storage_KPIs
+   - Type: StorageKPIs
 
+### StorageKPIs
+- mg_recovered
+   - Type: integer
+- U_recovered
+   - Type: integer
 
+### CatalyticPerformance
+- catalysed_reaction
+	- Type: string
+- components
+    - Type: Components
+- reaction_conditions
+	- Type: ReactionConditions
+- catalytic_KPIs
+    - Type: CatalyticKPIs
+
+### Components 
+- Substrate
+    - Type: string
+- Substrate_smiles
+    - Type: string
+- Product  
+    - Type: string
+- Product_smiles
+    - Type: string
+- Co_substrate
+    - Type: string
+- Cosubstrate_smiles
+    - Type: string
+- Cofactor 
+    - Type: string
+- Cofactor_recycling_system
+    - Type: string
+
+### ReactionConditions
+% übernehmen aus Strenda
+- well_mixed_solutions
+  	- Type: string
+- tubular_flow
+    - Type: string
+
+### CatalyticKPIs
+- conversion
+    - Type: integer
+- turnover_number
+    - Type: integer
+- turnover_frequency
+    - Type: integer
+- space_time_yield
+    - Type: integer
+- Enzyme_bleeding
+    - Type: string
+- Carrier_recovery
+    - Type: string
+
+### mKPIsEfficiency
+- Recovered_activity_efficiency
+	- Type: integer 
+- Space_time_activity
+	- Type: integer
+- Total_volumetric_turnovers
+	- Type: integer
+- Total_process_productivity
+	- Type: integer
+
+ 
 ## Enumerations
 
 ### Processmode
