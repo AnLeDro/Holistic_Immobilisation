@@ -34,6 +34,12 @@ Description: Specification for enzyme immobilization process, including details 
   - Description: Details for in-house produced enzymes
 - as_sequ
   - Type: string
+- spec_activity_wt
+  - Type: integer
+  - Description: Specific activity in [U/mg] of the wildtype enzyme.
+- reaction_spec_activity
+  - Type: string
+  - Desription: Substrate used for determination of specific activity. 
 
 ### Purchase
 - supplier
@@ -50,6 +56,9 @@ Description: Specification for enzyme immobilization process, including details 
 - spec_activity
   - Type: integer
   - Description: U/mg
+- reaction_spec_activity
+  - Type: string
+  - Desription: Substrate used for determination of specific activity. 
 
 ### Produced
 
@@ -69,13 +78,16 @@ Description: Specifications for enzymes produced in-house through biotechnologic
 Description: Specifications for enzyme modifications to enhance functionality or facilitate purification
 - spec_activity
   - Type: integer
-  - Description: Specific activity of the modified enzyme in U/mg
+  - Description: Specific activity of the modified enzyme in [U/mg]
+- reaction_spec_activity
+  - Type: string
+  - Desription: Substrate used for determination of specific activity. 
 - tag
   - Type: string
   - Description: Type of affinity tag added to the enzyme
 - display
   - Type: string
-  - Description: Location and details of the affinity tag
+  - Description: Information on the enzyme display used as immobilisation technique (surface display, inclusion body display, ...). 
 - mutation
   - Type: string
   - Description: Any point mutations introduced into the enzyme sequence
@@ -85,18 +97,37 @@ Description: Specifications for enzyme modifications to enhance functionality or
 Description: Parameters and specifications for upstream processing of enzyme production
 - process_mode
   - Type: Processmode
-  - Description: Mode of fermentation operation
+  - Description: Mode of fermentation operation 
+- USP_KPIs
+  - Type: USPKPIs
+  - Description: KPIs calculated for the USP section.
+
+### USPKPIs
 - scale
   - Type: integer
-- kpi_i
+  - Description: Final volume of the fermentation broth.
+- time_USP
   - Type: integer
-  - Description: Key performance indicator for biomass yield
-- kpi_ii
+  - Description: Time used for USP in [h].
+- STY_USP
   - Type: integer
-  - Description: Key performance indicator for substrate utilization
-- kpi_iii
+  - Description: Productivity (space-time-yield) of the process.
+- Product_yield_per_substrate
   - Type: integer
-  - Description: Key performance indicator for product formation
+  - Description: Product yield per used substrate.
+- Product_yield_per_biomass
+  - Type: integer
+  - Description: Product yield per used biomass.
+- Units_per_liter_of_fermentation_broth
+  - Type: integer
+  - Description: 
+- Amount_of_enzyme_per_liter_of_fermentation_broth
+  - Type: integer
+  - Description: 
+- Total_Units
+  - Type: integer
+  - Description:
+
 
 ### Harvest
 
@@ -107,6 +138,9 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 - supernatant
   - Type: Supernatant
   - Description: Processing steps for extracellular enzymes
+- harvest_KPIs
+  - Type: HarvestKPIs
+  - Description
 
 
 ### Cells
@@ -137,6 +171,14 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
   - Type: PurMethod
 - method_description
   - Type: string
+ 
+### HarvestKPIs
+- mg_enzyme_recovered
+  - Type: integer
+  - Description:
+- U_enzyme_recovered
+  - Type: integer
+  - Description:    
 
 ### Immobilisation
 
