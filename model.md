@@ -128,7 +128,6 @@ Description: Parameters and specifications for upstream processing of enzyme pro
   - Type: integer
   - Description:
 
-
 ### Harvest
 
 Description: Methods and parameters for harvesting cells and recovering the enzyme product
@@ -141,7 +140,6 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 - harvest_KPIs
   - Type: HarvestKPIs
   - Description
-
 
 ### Cells
 - cell_lysis
