@@ -161,7 +161,7 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
   - Description: Processing steps for extracellular enzymes
 - harvest_KPIs
   - Type: HarvestKPIs
-  - Description
+  - Description:
 
 ### Cells
 - cell_lysis
