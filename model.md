@@ -4,24 +4,28 @@ prefix: "Immobilisior"
 ---
 
 # Immobilisation
-Description: Immobilization is a crucial technique in biotechnology where enzymes or cells are physically or chemically attached to a solid support material. This process enhances enzyme stability, enables reuse, and facilitates continuous bioprocessing operations.
+Description: Enzyme immobilisation is the process of attaching or confining enzymes to a solid support or within a matrix so that they remain in place and can be reused, while still retaining their catalytic activity. This process enhances enzyme stability, enables reuse, and facilitates continuous bioprocessing operations. This method enables a easy documentation and evaluation platform for immobilised enzyme processes (IEP), by taking into account, the entire production, purification, immobilisation and catalysis. It shows bottleneck steps during the entire process and faciliates a holistic comparison of different immobilisation techniques.
 
 ## Root Objects
 
-### Immobilisation_Spec
-Description: Specification for enzyme immobilization process, including details about the enzyme and immobilization parameters.
+### Holistic_immobilisation_method
+Description: Specification for immobilised enzyme processes, including upstream, downstream, immobilisation and catalysis. 
 
 - enzyme
   - Type: Enzyme
-  - Description: Details of the enzyme to be immobilized, including source and characteristics
+  - Description: Details of the enzyme to be immobilised, incuding enzyme expression and purification.
 - immobilisation
   - Type: Immobilisation
+  - Description: Details on the immobilsiation technique, inlcuding immobilisation chemistry, activity and efficiency.
 - storage_conditions
   - Type: StorageConditions
+  - Description: Details on the storage stability.
 - catalytic_performance
   - Type: CatalyticPerformance
+  - Description: Details on the catalysed reaction.
 - mKPIs_efficiency
   - Type: mKPIsEfficiency
+  - Description: meta key performance indicators, for a holistic comparison of immobilised enzyme processes. 
 
 ## General information
 
@@ -32,6 +36,12 @@ Description: Specification for enzyme immobilization process, including details 
 - produced
   - Type: Produced
   - Description: Details for in-house produced enzymes
+- ec_number
+  - Type: string
+  - Description:
+- molecular_weight
+  - Type: string
+  - Description:
 - as_sequ
   - Type: string
 - spec_activity_wt
@@ -81,7 +91,13 @@ Description: Specifications for enzyme modifications to enhance functionality or
   - Description: Specific activity of the modified enzyme in [U/mg]
 - reaction_spec_activity
   - Type: string
-  - Desription: Substrate used for determination of specific activity. 
+  - Desription: Substrate used for determination of specific activity.
+- dna_sequence
+  - Type: string
+  - Description:
+- aa_sequence
+  - Type: string
+  - Description:
 - tag
   - Type: string
   - Description: Type of affinity tag added to the enzyme
@@ -97,7 +113,13 @@ Description: Specifications for enzyme modifications to enhance functionality or
 Description: Parameters and specifications for upstream processing of enzyme production
 - process_mode
   - Type: Processmode
-  - Description: Mode of fermentation operation 
+  - Description: Mode of fermentation operation
+- expression_host
+  - Type: string
+  - Description:
+- origin_organism
+  - Type: string
+  - Description:
 - USP_KPIs
   - Type: USPKPIs
   - Description: KPIs calculated for the USP section.
