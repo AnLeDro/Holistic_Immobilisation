@@ -300,7 +300,7 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
     - Type: string
 
 ### ReactionConditions
-% übernehmen aus Strenda
+% add from Strenda
 - well_mixed_solutions
   	- Type: string
 - tubular_flow
