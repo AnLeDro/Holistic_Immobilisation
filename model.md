@@ -51,6 +51,8 @@ Description: Specification for immobilised enzyme processes, including upstream,
   - Type: string
   - Desription: Substrate used for determination of specific activity. 
 
+## Production
+
 ### Purchase
 - supplier
   - Type: string
@@ -198,7 +200,9 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
   - Description:
 - U_enzyme_recovered
   - Type: integer
-  - Description:    
+  - Description:
+  
+## Immobilisation
 
 ### Immobilisation
 
@@ -271,6 +275,8 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 - U_recovered
    - Type: integer
 
+## Catalysis
+
 ### CatalyticPerformance
 - catalysed_reaction
 	- Type: string
@@ -319,6 +325,8 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
     - Type: string
 - Carrier_recovery
     - Type: string
+ 
+## Final evaluation
 
 ### mKPIsEfficiency
 - Recovered_activity_efficiency
