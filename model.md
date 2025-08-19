@@ -9,7 +9,7 @@ Description: Enzyme immobilisation is the process of attaching or confining enzy
 ## Root Objects
 
 ### Holistic_immobilisation_method
-Description: Specification for immobilised enzyme processes, including upstream, downstream, immobilisation and catalysis. 
+Description: Specifications for immobilised enzyme processes, including upstream, downstream, immobilisation and catalysis. Each category inlcudes a section to include key performance indicators describing each of the single process phases. Meta key performance indicators will be calculated accordingly, to allow fast and easy comparison between different processes. 
 
 - enzyme
   - Type: Enzyme
@@ -25,7 +25,7 @@ Description: Specification for immobilised enzyme processes, including upstream,
   - Description: Details on the catalysed reaction.
 - mKPIs_efficiency
   - Type: mKPIsEfficiency
-  - Description: meta key performance indicators, for a holistic comparison of immobilised enzyme processes. 
+  - Description: Meta key performance indicators, for a holistic comparison of immobilised enzyme processes. 
 
 ## General information
 
@@ -38,12 +38,13 @@ Description: Specification for immobilised enzyme processes, including upstream,
   - Description: Details for in-house produced enzymes
 - ec_number
   - Type: string
-  - Description:
+  - Description: Enzyme class number.
 - molecular_weight
   - Type: string
-  - Description:
+  - Description: Molecular weight in [kDa]
 - as_sequ
   - Type: string
+  - Description: Aminoacid sequence
 - spec_activity_wt
   - Type: integer
   - Description: Specific activity in [U/mg] of the wildtype enzyme.
@@ -54,44 +55,45 @@ Description: Specification for immobilised enzyme processes, including upstream,
 ## Production
 
 ### Purchase
+Description: Specifications for purchased enzymes.
 - supplier
   - Type: string
 - cas_num
   - Type: string
 - eg_num
   - Type: string
+- origin_organism
+  - Type: string
 - host_org
   - Type: string
 - purity
   - Type: integer
-  - Description : in %
+  - Description : in [%]
 - spec_activity
   - Type: integer
-  - Description: U/mg
+  - Description: in [U/mg]
 - reaction_spec_activity
   - Type: string
   - Desription: Substrate used for determination of specific activity. 
 
 ### Produced
-
-Description: Specifications for enzymes produced in-house through biotechnological processes
+Description: Specifications for enzymes produced in-house through biotechnological processes.
 - modification
   - Type: Modification
-  - Description: Details of any genetic or chemical modifications made to the enzyme
+  - Description: Details of any genetic or chemical modifications made to the enzyme.
 - usp
   - Type: USP
-  - Description: Upstream processing parameters and conditions
-- harvest
-  - Type: Harvest
-  - Description: Parameters and methods for cell harvesting and product recovery
+  - Description: Upstream processing parameters and conditions.
+- dsp
+  - Type: DSP
+  - Description: Parameters and methods for cell harvesting and product recovery.
 
 ### Modification
-
-Description: Specifications for enzyme modifications to enhance functionality or facilitate purification
-- spec_activity
+Description: Specifications for enzyme modifications to enhance functionality or facilitate purification.
+- spec_activity_mod
   - Type: integer
   - Description: Specific activity of the modified enzyme in [U/mg]
-- reaction_spec_activity
+- reaction_spec_activity_mod
   - Type: string
   - Desription: Substrate used for determination of specific activity.
 - dna_sequence
@@ -111,7 +113,6 @@ Description: Specifications for enzyme modifications to enhance functionality or
   - Description: Any point mutations introduced into the enzyme sequence
 
 ### USP
-
 Description: Parameters and specifications for upstream processing of enzyme production
 - process_mode
   - Type: Processmode
@@ -127,6 +128,7 @@ Description: Parameters and specifications for upstream processing of enzyme pro
   - Description: KPIs calculated for the USP section.
 
 ### USPKPIs
+Description: KPIs used for evaluation of the process.
 - scale
   - Type: integer
   - Description: Final volume of the fermentation broth.
@@ -144,16 +146,15 @@ Description: Parameters and specifications for upstream processing of enzyme pro
   - Description: Product yield per used biomass.
 - Units_per_liter_of_fermentation_broth
   - Type: integer
-  - Description: 
+  - Description: Units per liter of fermentation broth in [U/l]
 - Amount_of_enzyme_per_liter_of_fermentation_broth
   - Type: integer
-  - Description: 
+  - Description: Amount of enzyme per liter fermentation broth [mg/l]
 - Total_Units
   - Type: integer
-  - Description:
+  - Description: Final Units at the end of upstream fermentation. 
 
-### Harvest
-
+### DSP
 Description: Methods and parameters for harvesting cells and recovering the enzyme product
 - cells
   - Type: Cells
@@ -161,9 +162,9 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 - supernatant
   - Type: Supernatant
   - Description: Processing steps for extracellular enzymes
-- harvest_KPIs
-  - Type: HarvestKPIs
-  - Description:
+- DSP_KPIs
+  - Type: DSPKPIs
+  - Description: KPIs descripting harvest and downstream
 
 ### Cells
 - cell_lysis
@@ -181,20 +182,18 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 ### Supernatant
 - centrifugation
   - Type: string
-  - Description: Parameters for removing cell debris from culture medium
+  - Description: Parameters and method used for removing cell debris from culture medium
 - purification
   - Type: Purification[]
   - Description: Series of purification steps applied to the supernatant
 
 ### Purification
-- step_no
-  - Type: integer
 - pur_method
   - Type: PurMethod
 - method_description
   - Type: string
  
-### HarvestKPIs
+### DSPKPIs
 - mg_enzyme_recovered
   - Type: integer
   - Description:
@@ -205,7 +204,6 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 ## Immobilisation
 
 ### Immobilisation
-
 - immobilisation_chemistry
   - Type: string
   - Description: This aspect denotes the specific chemical methods or techniques used to attach the enzymes onto the chosen base material. Different immobilisation chemistries involve various covalent or non-covalent bonding strategies, including adsorption, covalent bonding, specific binding via (affinity)tag, entrapment or crosslinking.
@@ -227,18 +225,23 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
   - Description: If a support material, base, or carrier was utilized, it is necessary to specify the material's name (e.g., gel, membrane, particle) along with the supplier and further product details. 
 - method
   - Type: string
+  - Description: Method description for enzyme immobilisation 
 - surface_modification
   - Type: string
+  - Description: Type of surface modification of the support material
 
 ### Entrapment
 - material
   - Type: string
+  - Description: Type of material used for enzyme entrapment
 - method
   - Type: string
+  - Description: Method description for enzyme entrapment
 
 ### CarrierFree
 - method
   - Type: string
+  - Description: Method description for carrier-free immobilisation
 
 ### ImmoKPIs
 - immobilisation_yield
@@ -260,12 +263,10 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
 ### StorageConditions
 - temperature
    - Type: integer
+   - Description: Temperature for storage in [°C]
 - additices
    - Type: string
-- storage_performance_t12
-   - Type: integer
-- spec_activity
-   - Type: integer
+   - Description: Types of additives added for storage.
 - storage_KPIs
    - Type: StorageKPIs
 
@@ -274,18 +275,25 @@ Description: Methods and parameters for harvesting cells and recovering the enzy
    - Type: integer
 - U_recovered
    - Type: integer
+- storage_performance_t12
+   - Type: integer
+   - Description: Half-life in [h]
 
 ## Catalysis
 
 ### CatalyticPerformance
 - catalysed_reaction
 	- Type: string
+	- Desription: Information on the catalysed reaction.
 - components
     - Type: Components
+    - Description: List of components used in the catalysis.
 - reaction_conditions
 	- Type: ReactionConditions
+   	- Description: Detailed information on the reaction conditions.
 - catalytic_KPIs
     - Type: CatalyticKPIs
+    - Description: KPIs describing the catalysis
 
 ### Components 
 - Substrate
